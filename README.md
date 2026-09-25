@@ -1,75 +1,78 @@
-🚧 **_The project structure will look like this:_**
+# Serenity Screenplay Salesforce
 
-# **TECHNICAL TEST FOR VPR**
+UI automation of Salesforce account flows (create and edit an Account) using Serenity BDD with the Screenplay pattern, Cucumber and Selenium WebDriver in Java 17.
 
-## Introduction 📖
-Automation developed to meet the technical challenge for VPR.
-The automation was performed for the [Salesforce](https://login.salesforce.com/) page.
+![Java](https://img.shields.io/badge/Java-17-ED8B00?logo=openjdk&logoColor=white)
+![Serenity BDD](https://img.shields.io/badge/Serenity_BDD-4.1-2E8B57)
+![Cucumber](https://img.shields.io/badge/Cucumber-7-23D96C?logo=cucumber&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-4.19-43B02A?logo=selenium&logoColor=white)
 
-`test_salesforce` where the automation is hosted.
+## What it tests
 
-## Prerequisites 📋
-- Java version 17 and JDK
-- IntelliJ IDEA or Eclipse IDE
-- Maven
-- Cucumber
+| Feature | Scenario | Verifies |
+|---|---|---|
+| `CreateAccount.feature` | Log in, open Accounts, fill the new-account form and save | Success toast text; account dashboard (header, side bar, main panel) is displayed |
+| `EditAccount.feature` | Log in, pick an existing account, edit its details and save | Updated values are displayed in the account details |
 
-## Installation 🛠️🔩
-- Unzip the compressed file or clone the repository:
-- Import the project from Eclipse or IntelliJ IDE.
-- Install and configure JDK - Java (environment variables set).
-- Install and configure Maven.
-- Install Cucumber plugin for Java in the IDE.
+Runs against a Salesforce org (Lightning UI) with the credentials you provide; nothing environment-specific is committed.
 
-## Running the Project 🚧⚒️
-- Enter the package test_salesforce \ src \ test \ java \ accountsalesforce \ runners.
-- You will find 3 Runners. One executes both scenarios and a RunnerAllFeatures depending on which one you want to execute.
+## Architecture (Screenplay)
 
-## Web Browsers 🌐
-The automation currently runs on the following browsers:
-- Google Chrome Version 123 or higher.
+- **Actor**: `OnStage` / `OnlineCast` with the `BrowseTheWeb` ability on a configured Chrome instance.
+- **Tasks** (`task/`): `LoginActions`, `HomeActions`, `CreateAccountActions`, `SelectAcccountToEditActions`, `EditAccountActions`; business-level interactions composed of Serenity `Click`, `SendKeys`, `Check` and `WaitUntil`.
+- **Questions** (`questions/`): `ElementTextValidator` and `ElementVisibilityValidator` read state from the UI for `seeThat` assertions.
+- **User interfaces** (`userinterfaces/`): `Target` definitions per page (`LoginPage`, `HomePage`, `AccountPage`, `SpecificAccountPage`).
+- **Step definitions** (`stepdefinitions/`): bind Gherkin steps to tasks and questions; custom `Exceptions` produce readable failure messages through `orComplainWith`.
+- **Utilities** (`utils/`): driver factory, constants, login data, random test data and assertion data.
 
-## General Implementation Details 💻
-The test scenarios are created in the feature with Gherkin language, they are connected with a method of the StepDefinitions classes with the help of @Given, @When, and @Then annotations, the methods of the step definition are connected with Task type classes for the Given and the When, where actions are performed bringing elements from the user interface, but for the Then it communicates with Questions type classes to make validations.
+## How to run
 
-   ```bash
-   📦NameProject(test_salesforce)
-   ┣ 📂src
-   ┃ ┣ 📂main
-   ┃ ┃ ┣ 📂java
-   ┃ ┃ ┃ ┗ 📦[package](test.accountsalesforce)
-   ┃ ┃ ┃   ┣ 📂exceptions (Classes that catch custom exceptions when automation fails and does not find an expected field.)
-   ┃ ┃ ┃   ┣ 📂questions (Classes that build data models)
-   ┃ ┃ ┃   ┣ 📂tasks (Classes that perform high-level actions, such as entering data into a form, etc.)
-   ┃ ┃ ┃   ┣ 📂userinterfaces (Classes where the user interface elements are mapped, i.e., the web elements.)
-   ┃ ┃ ┃   ┗ 📂utils (Classes that contain common functionalities.)
-   ┃ ┃ ┗ 📂resources
-   ┃ ┗ 📂test
-   ┃ ┃ ┣ 📂java
-   ┃ ┃ ┃ ┣ 📦[package](test.accountsalesforce)
-   ┃ ┃ ┃ ┣ 📂runners (Classes to execute the automation with the scenarios indicated in the feature.)
-   ┃ ┃ ┃ ┗ 📂stepdefinitions (Classes where the steps of the scenarios to be executed in the automation are defined.)
-   ┃ ┃ ┗ 📂resources
-   ┃ ┃   ┗ 📂features (Where the files with .feature extension are stored, where user stories are written.)
-   ┣ 📂target
-   ┣ 📜.gitignore
-   ┣ 📜pom.xml
-   ┗ 📜serenity.properties
-   ┣ 📜README.md
+Requires JDK 17, Maven 3.x and Google Chrome (the driver is resolved by Selenium Manager).
 
- 
+Credentials are read from the `SF_USERNAME` and `SF_PASSWORD` environment variables (or `-D` system properties); the suite fails fast with a clear message if they are missing. See `.env.example`.
+
+```bash
+git clone https://github.com/criguex/serenity-screenplay-salesforce.git
+cd serenity-screenplay-salesforce
+
+export SF_USERNAME="your.user@example.com"
+export SF_PASSWORD="your-password"
+export HEADLESS=true                              # optional, default false
+
+mvn clean verify                                  # all features + Serenity report
+mvn clean verify -Dtest=RunCreateAccountFeature   # single feature
+mvn clean verify -Dtest=RunEditAccountFeature
 ```
 
-## Built With 👨🏻‍💻
-The automation was developed using:
-- Java - Programming language.
-- BDD - Development strategy.
-- Screenplay - Design pattern.
-- MAVEN - Dependency management.
-- Selenium Web Driver - Tool for automating actions in web browsers.
-- Cucumber - Framework for automating BDD tests.
-- Serenity BDD - Open source library for report generation.
-- Gherkin - Business Readable DSL (Domain Specific Language readable by business)
+## Project structure
 
-## Author ✒️👨🏻‍
-**©️ Cristian Guerra Gómez** - *Project Creation.* - [criguex@gmail.com](#criguex)
+```
+.
+├── .env.example
+├── pom.xml
+├── serenity.properties
+└── src/
+    ├── main/java/test/accountsalesforce/
+    │   ├── exceptions/       Exceptions
+    │   ├── questions/        ElementTextValidator, ElementVisibilityValidator
+    │   ├── task/             LoginActions, HomeActions, CreateAccountActions, EditAccountActions, ...
+    │   ├── userinterfaces/   LoginPage, HomePage, AccountPage, SpecificAccountPage
+    │   └── utils/            drivers, constants, data, randomdata, assertiondata
+    └── test/
+        ├── java/test/accountsalesforce/
+        │   ├── runner/           RunAllFeatures, RunCreateAccountFeature, RunEditAccountFeature
+        │   └── stepdefinitions/  CreateAccountStepDefinitions, EditAccountStepDefinitions
+        └── resources/features/   CreateAccount.feature, EditAccount.feature
+```
+
+## Reporting
+
+`mvn verify` runs the Serenity Maven plugin after the tests and writes the aggregated report to `target/site/serenity/` (`index.html`, plus a single-page HTML version) with step-by-step screenshots, timings and the Screenplay narrative for each scenario.
+
+## CI
+
+No workflow is configured: the suite needs a live Salesforce org and credentials, so it is meant to run locally or from a pipeline that injects `SF_USERNAME` and `SF_PASSWORD` as secrets.
+
+---
+
+Cristian Guerra · Senior SDET · [linkedin.com/in/criguex](https://www.linkedin.com/in/criguex)

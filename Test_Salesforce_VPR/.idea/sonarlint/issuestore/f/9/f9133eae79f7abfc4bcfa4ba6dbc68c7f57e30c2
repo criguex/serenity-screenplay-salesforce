@@ -1,18 +1,0 @@
-
-
-java:S1488"bImmediately return this expression instead of assigning it to the temporary variable "randomName".(¬î§Á8¦‚²µğ1
-…
-java:S1488 "cImmediately return this expression instead of assigning it to the temporary variable "phoneNumber".(ôê¦øÿÿÿÿ8¹¨²µğ1
-\
-java:S1118":Add a private constructor to hide the implicit public one.(ŠåëŠÿÿÿÿÿ8¶‚²µğ1
-F
-java:S2140")Use "java.util.Random.nextInt()" instead.(ĞÅï8·‚²µğ1
-E
-java:S2140
-")Use "java.util.Random.nextInt()" instead.(âµª!8¸‚²µğ1
-:
-java:S2119"Save and re-use this "Random".(¼İÅf8»‚²µğ1
-F
-java:S2140")Use "java.util.Random.nextInt()" instead.(ˆÑÒâ8¼‚²µğ1
-F
-java:S2140")Use "java.util.Random.nextInt()" instead.(îìü¬8¼‚²µğ1
