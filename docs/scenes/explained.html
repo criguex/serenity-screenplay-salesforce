@@ -80,12 +80,12 @@ const S = {
      "sp": "pill",
      "x": 610,
      "y": 420,
-     "w": 420,
+     "w": 480,
      "k": "warn",
      "mono": false,
      "text": {
-      "en": "needs your username + password",
-      "es": "necesita tu usuario + contraseña"
+      "en": "Needs a Salesforce username and password",
+      "es": "Necesita usuario y contraseña de Salesforce"
      },
      "at": 1.4
     }
@@ -255,24 +255,24 @@ const S = {
     },
     {
      "sp": "pill",
-     "x": 700,
+     "x": 690,
      "y": 270,
-     "w": 380,
+     "w": 400,
      "k": "warn",
      "mono": false,
      "text": {
-      "en": "runs on your computer (no CI)",
-      "es": "corre en tu computador (sin CI)"
+      "en": "Runs on your computer, no CI",
+      "es": "Corre en tu computador, sin CI"
      },
      "at": 1.0
     },
     {
      "sp": "text",
-     "x": 700,
+     "x": 690,
      "y": 330,
      "text": {
-      "en": "it needs a real Salesforce account",
-      "es": "necesita una cuenta real de Salesforce"
+      "en": "It needs a real Salesforce account",
+      "es": "Necesita una cuenta real de Salesforce"
      },
      "size": 17,
      "c": "#ABC0C8",
@@ -366,7 +366,13 @@ const SP = {
   },
   pill: p => {
     const w = p.w || 180, c = K[p.k] || C.grid;
-    const sym = p.k === 'ok' ? '✓' : p.k === 'no' ? '✗' : p.k === 'warn' ? '!' : '';
+    if (p.k === 'warn') {
+      return `<rect x="${-w / 2}" y="-20" width="${w}" height="40" rx="20" fill="${C.deep}" stroke="${c}" stroke-width="3"/>
+      <path d="M${-w / 2 + 26} -12 L${-w / 2 + 39} 11 L${-w / 2 + 13} 11 Z" fill="${C.gold}" stroke="${C.gold}" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="${-w / 2 + 24.5}" y="-6" width="3" height="9" rx="1.5" fill="${C.navy}"/><circle cx="${-w / 2 + 26}" cy="6.5" r="1.8" fill="${C.navy}"/>
+      <text x="16" y="6" font-family="${p.mono === false ? SANS : MONO}" font-size="${p.size || 16}" text-anchor="middle" font-weight="700" fill="${C.white}">${esc(p.text)}</text>`;
+    }
+    const sym = p.k === 'ok' ? '✓' : p.k === 'no' ? '✗' : '';
     return `<rect x="${-w / 2}" y="-20" width="${w}" height="40" rx="20" fill="${C.deep}" stroke="${c}" stroke-width="3"/>
       <text x="0" y="6" font-family="${p.mono === false ? SANS : MONO}" font-size="${p.size || 16}" text-anchor="middle" font-weight="700"><tspan fill="${c}">${sym}</tspan><tspan fill="${C.white}">${sym ? ' ' : ''}${esc(p.text)}</tspan></text>`;
   },
