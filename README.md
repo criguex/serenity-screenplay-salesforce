@@ -4,6 +4,34 @@
   <img src="docs/assets/banner.svg" alt="serenity-screenplay-salesforce: UI automation of Salesforce account flows where an actor performs tasks and asks questions" width="100%">
 </p>
 
+## Explained like you're 8
+
+Imagine a school play. There is a script with the lines, an actor who follows it, things the actor does on stage, and questions the teacher asks at the end to see if the scene went right. This project tests Salesforce, a program companies use to keep track of their customers, the same way: the script is written in plain English, an actor called Cristian logs in and creates a customer account, and then asks "do I see the message that says it was created?".
+
+### A real example
+
+- **Imagine that:** Cristian fills the new-account form with made-up data (name, website, phone, addresses: 14 boxes) and presses Save.
+- **What should happen:** Salesforce shows "Se creó Cuenta" ("account created") and opens the new account's page.
+- **What the project does:** the actor asks the screen whether that text is there and whether the header, the side bar and the main panel are visible.
+- **What we gain:** if saving stopped working, the test would fail with a clear, readable message.
+
+<p align="center">
+  <img src="docs/assets/explained.gif" alt="Illustrated story: a script tells the story, the actor Cristian gets a browser, does the tasks one by one, asks whether he sees the success message, and the report keeps a picture of each step" width="960">
+</p>
+
+The same animation as [MP4](docs/assets/explained.mp4).
+
+### Hard words
+
+| Word | What it means |
+|---|---|
+| Screenplay | A way to write tests like a play: actors, tasks and questions |
+| Actor | The pretend user who does everything in the test |
+| Task | One thing the actor does, like logging in |
+| Question | Something the actor checks on the screen |
+| Feature file | The script, written in plain English |
+| Environment variable | A note the computer keeps outside the code; here, the username and password |
+
 # Serenity Screenplay Salesforce
 
 UI automation of Salesforce account flows (create and edit an Account) using Serenity BDD with the Screenplay pattern, Cucumber and Selenium WebDriver in Java 17.
@@ -74,8 +102,8 @@ mvn clean verify -Dtest=RunEditAccountFeature
 .
 ├── .env.example
 ├── docs/
-│   ├── assets/        banner.svg, how-it-works.svg, how-it-works.gif, how-it-works.mp4
-│   └── scenes/        how-it-works.html + export.sh (rebuild the animation)
+│   ├── assets/        banner.svg, how-it-works.*, explained.* (kids' animation, EN + .es)
+│   └── scenes/        how-it-works.html, explained.html + their export scripts
 ├── pom.xml
 ├── serenity.properties
 └── src/
@@ -108,7 +136,7 @@ No workflow is configured: the suite needs a live Salesforce org and credentials
 
 ## Rebuilding the animation
 
-`docs/scenes/how-it-works.html` draws each frame from `?t=<seconds>`; `docs/scenes/export.sh` captures the frames with headless Chrome and encodes `how-it-works.gif` and `how-it-works.mp4` with ffmpeg.
+`docs/scenes/how-it-works.html` draws each frame from `?t=<seconds>`; `docs/scenes/export.sh` captures the frames with headless Chrome and encodes `how-it-works.gif` and `how-it-works.mp4` with ffmpeg. `docs/scenes/explained.html` (`?t=<seconds>&lang=en|es`) and `docs/scenes/export-explained.sh` do the same for the kids' animation.
 
 ---
 

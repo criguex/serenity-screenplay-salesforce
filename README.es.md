@@ -4,6 +4,34 @@
   <img src="docs/assets/banner.svg" alt="serenity-screenplay-salesforce: automatización de interfaz de los flujos de cuentas de Salesforce, donde un actor ejecuta tareas y hace preguntas" width="100%">
 </p>
 
+## Explicado para un niño de 8 años
+
+Imagina una obra de teatro del colegio. Hay un guion con los diálogos, un actor que lo sigue, cosas que el actor hace en el escenario y preguntas que la profe hace al final para ver si la escena salió bien. Este proyecto prueba Salesforce, un programa que usan las empresas para llevar la cuenta de sus clientes, de la misma manera: el guion está escrito en inglés sencillo, un actor llamado Cristian inicia sesión y crea la cuenta de un cliente, y después pregunta "¿veo el mensaje que dice que se creó?".
+
+### Un ejemplo real
+
+- **Imagina que:** Cristian llena el formulario de cuenta nueva con datos inventados (nombre, página web, teléfono, direcciones: 14 casillas) y le da Guardar.
+- **Qué debería pasar:** Salesforce muestra "Se creó Cuenta" y abre la página de la cuenta nueva.
+- **Qué hace el proyecto:** el actor le pregunta a la pantalla si ese texto está y si se ven el encabezado, la barra lateral y el panel principal.
+- **Qué ganamos:** si guardar dejara de funcionar, la prueba fallaría con un mensaje claro y fácil de leer.
+
+<p align="center">
+  <img src="docs/assets/explained.es.gif" alt="Historia ilustrada: un guion cuenta la historia, el actor Cristian recibe un navegador, hace las tareas una por una, pregunta si ve el mensaje de éxito y el reporte guarda una foto de cada paso" width="960">
+</p>
+
+La misma animación en [MP4](docs/assets/explained.es.mp4).
+
+### Palabras difíciles
+
+| Palabra | Qué quiere decir |
+|---|---|
+| Screenplay | Una forma de escribir pruebas como una obra de teatro: actores, tareas y preguntas |
+| Actor | El usuario de mentiras que hace todo en la prueba |
+| Tarea (task) | Una cosa que hace el actor, como iniciar sesión |
+| Pregunta (question) | Algo que el actor revisa en la pantalla |
+| Feature file | El guion, escrito en inglés sencillo |
+| Variable de entorno | Una nota que el computador guarda por fuera del código; aquí, el usuario y la contraseña |
+
 # Serenity Screenplay Salesforce
 
 Automatización de interfaz de los flujos de cuentas de Salesforce (crear y editar una Account) con Serenity BDD y el patrón Screenplay, Cucumber y Selenium WebDriver en Java 17.
@@ -74,8 +102,8 @@ mvn clean verify -Dtest=RunEditAccountFeature
 .
 ├── .env.example
 ├── docs/
-│   ├── assets/        banner.svg, how-it-works.svg, how-it-works.gif, how-it-works.mp4
-│   └── scenes/        how-it-works.html + export.sh (regenera la animación)
+│   ├── assets/        banner.svg, how-it-works.*, explained.* (animación para niños, EN + .es)
+│   └── scenes/        how-it-works.html, explained.html + sus scripts de export
 ├── pom.xml
 ├── serenity.properties
 └── src/
@@ -108,7 +136,7 @@ No hay workflow configurado: la suite necesita una org de Salesforce activa y cr
 
 ## Regenerar la animación
 
-`docs/scenes/how-it-works.html` dibuja cada cuadro a partir de `?t=<segundos>`; `docs/scenes/export.sh` captura los cuadros con Chrome headless y arma `how-it-works.gif` y `how-it-works.mp4` con ffmpeg.
+`docs/scenes/how-it-works.html` dibuja cada cuadro a partir de `?t=<segundos>`; `docs/scenes/export.sh` captura los cuadros con Chrome headless y arma `how-it-works.gif` y `how-it-works.mp4` con ffmpeg. `docs/scenes/explained.html` (`?t=<segundos>&lang=en|es`) y `docs/scenes/export-explained.sh` hacen lo mismo con la animación para niños.
 
 ---
 
