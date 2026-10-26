@@ -1,3 +1,9 @@
+[Leer en español](README.es.md)
+
+<p align="center">
+  <img src="docs/assets/banner.svg" alt="serenity-screenplay-salesforce: UI automation of Salesforce account flows where an actor performs tasks and asks questions" width="100%">
+</p>
+
 # Serenity Screenplay Salesforce
 
 UI automation of Salesforce account flows (create and edit an Account) using Serenity BDD with the Screenplay pattern, Cucumber and Selenium WebDriver in Java 17.
@@ -6,6 +12,24 @@ UI automation of Salesforce account flows (create and edit an Account) using Ser
 ![Serenity BDD](https://img.shields.io/badge/Serenity_BDD-4.1-2E8B57)
 ![Cucumber](https://img.shields.io/badge/Cucumber-7-23D96C?logo=cucumber&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-4.19-43B02A?logo=selenium&logoColor=white)
+
+## How it works
+
+<p align="center">
+  <img src="docs/assets/how-it-works.svg" alt="Feature files are bound by step definitions to an actor called Cristian who can browse the web with Chrome; the actor performs tasks built on page targets and asks questions whose answers are checked with seeThat, against a Salesforce Lightning org" width="100%">
+</p>
+
+1. A Cucumber runner (`CucumberWithSerenity`) picks up `CreateAccount.feature` and `EditAccount.feature`.
+2. The step definitions set the stage (`OnlineCast`), call the actor `Cristian` and give it the `BrowseTheWeb` ability on Chrome pointed at `login.salesforce.com`.
+3. The actor performs **tasks** (`LoginActions`, `HomeActions`, `CreateAccountActions`, …) built from Serenity interactions (`Click`, `SendKeys`, `Check`, `WaitUntil`) on the **targets** declared in `userinterfaces/`.
+4. The actor asks **questions** (`ElementTextValidator`, `ElementVisibilityValidator`) and checks them with `seeThat`; a mismatch is reported through `orComplainWith` and the custom `Exceptions` messages.
+5. `mvn verify` aggregates the Serenity report with screenshots and the Screenplay narrative.
+
+<p align="center">
+  <img src="docs/assets/how-it-works.gif" alt="Animation: each Gherkin step of CreateAccount.feature is mapped to the Screenplay call it triggers, from login to the seeThat checks and the Serenity report" width="960">
+</p>
+
+The animation walks the code path of `CreateAccount.feature` step by step (also as [MP4](docs/assets/how-it-works.mp4)). It is not a recording of a run: there is no CI workflow, so no run results are published in this repository.
 
 ## What it tests
 
@@ -49,6 +73,9 @@ mvn clean verify -Dtest=RunEditAccountFeature
 ```
 .
 ├── .env.example
+├── docs/
+│   ├── assets/        banner.svg, how-it-works.svg, how-it-works.gif, how-it-works.mp4
+│   └── scenes/        how-it-works.html + export.sh (rebuild the animation)
 ├── pom.xml
 ├── serenity.properties
 └── src/
@@ -72,6 +99,16 @@ mvn clean verify -Dtest=RunEditAccountFeature
 ## CI
 
 No workflow is configured: the suite needs a live Salesforce org and credentials, so it is meant to run locally or from a pipeline that injects `SF_USERNAME` and `SF_PASSWORD` as secrets.
+
+## Limits
+
+- It needs a live Salesforce org and valid credentials; without them the login task stops with a clear message.
+- `EditAccount.feature` picks a random account from the Accounts list, so the org needs at least one account.
+- Form data is random on every run, so runs are not byte-for-byte repeatable.
+
+## Rebuilding the animation
+
+`docs/scenes/how-it-works.html` draws each frame from `?t=<seconds>`; `docs/scenes/export.sh` captures the frames with headless Chrome and encodes `how-it-works.gif` and `how-it-works.mp4` with ffmpeg.
 
 ---
 

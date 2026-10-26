@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="546" viewBox="0 0 1280 546">
+<defs>
+<pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#55DFBD" stroke-opacity=".06" stroke-width="1"/></pattern>
+<clipPath id="c"><rect width="1280" height="546" rx="20"/></clipPath>
+<marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#55DFBD"/></marker>
+<marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#FB8176"/></marker>
+<marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#FFC56E"/></marker>
+</defs>
+<g clip-path="url(#c)"><rect width="1280" height="546" fill="#071B2B"/><rect width="1280" height="546" fill="url(#g)"/><rect x="0" y="0" width="8" height="546" fill="#55DFBD"/></g>
+<text x="48" y="56" font-family="Menlo,Consolas,monospace" font-size="13" font-weight="normal" fill="#8FA6B0" text-anchor="start" letter-spacing="2.5" xml:space="preserve">SERENITY-SCREENPLAY-SALESFORCE · HOW IT WORKS</text>
+<text x="48" y="92" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="28" font-weight="bold" fill="#F4F7F5" text-anchor="start" xml:space="preserve">An actor performs tasks and asks questions</text>
+<text x="48" y="120" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="15" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">Create and edit a Salesforce Account · Serenity BDD 4.1 · Cucumber 7 · Selenium 4.19 · Java 17</text>
+<rect x="48" y="146" width="220" height="264" rx="12" fill="#0D2638" stroke="#214456" stroke-width="1.5"/>
+<text x="64" y="170" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#8FA6B0" text-anchor="start" letter-spacing="0.5" xml:space="preserve">features/ · runner/</text>
+<text x="64" y="194" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="17" font-weight="bold" fill="#F4F7F5" text-anchor="start" xml:space="preserve">Features</text>
+<text x="64" y="219" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">CreateAccount.feature</text>
+<text x="64" y="238" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">EditAccount.feature</text>
+<text x="64" y="257" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve"></text>
+<text x="64" y="276" font-family="Menlo,Consolas,monospace" font-size="12" xml:space="preserve"><tspan fill="#F4F7F5">RunAllFeatures</tspan></text>
+<text x="64" y="295" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">RunCreateAccountFeature</text>
+<text x="64" y="314" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">RunEditAccountFeature</text>
+<text x="64" y="333" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">CucumberWithSerenity</text>
+<rect x="292" y="146" width="246" height="264" rx="12" fill="#0D2638" stroke="#214456" stroke-width="1.5"/>
+<text x="308" y="170" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#8FA6B0" text-anchor="start" letter-spacing="0.5" xml:space="preserve">stepdefinitions/</text>
+<text x="308" y="194" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="17" font-weight="bold" fill="#F4F7F5" text-anchor="start" xml:space="preserve">Step definitions</text>
+<text x="308" y="219" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">OnStage.setTheStage(</text>
+<text x="308" y="238" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">  new OnlineCast())</text>
+<text x="308" y="257" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">theActorCalled("Cristian")</text>
+<text x="308" y="276" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">can(BrowseTheWeb.with(</text>
+<text x="308" y="295" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">  chrome → login.</text>
+<text x="308" y="314" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">  salesforce.com))</text>
+<rect x="562" y="146" width="196" height="264" rx="12" fill="#0D2638" stroke="#214456" stroke-width="1.5"/>
+<text x="578" y="170" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#8FA6B0" text-anchor="start" letter-spacing="0.5" xml:space="preserve">actor</text>
+<text x="578" y="194" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif" font-size="17" font-weight="bold" fill="#F4F7F5" text-anchor="start" xml:space="preserve">Cristian</text>
+<text x="578" y="219" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">ability:</text>
+<text x="578" y="238" font-family="Menlo,Consolas,monospace" font-size="12" xml:space="preserve"><tspan fill="#F4F7F5">BrowseTheWeb</tspan></text>
+<text x="578" y="257" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">Chrome incognito,</text>
+<text x="578" y="276" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">HEADLESS=true opt.</text>
+<text x="578" y="295" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve"></text>
+<text x="578" y="314" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">performs tasks,</text>
+<text x="578" y="333" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">asks questions</text>
+<rect x="782" y="146" width="250" height="136" rx="12" fill="#0D2638" stroke="#214456" stroke-width="1.5"/>
+<text x="798" y="170" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#8FA6B0" text-anchor="start" letter-spacing="0.5" xml:space="preserve">task/ · performs</text>
+<text x="798" y="194" font-family="Menlo,Consolas,monospace" font-size="12" xml:space="preserve"><tspan fill="#F4F7F5">LoginActions</tspan></text>
+<text x="798" y="212" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">HomeActions</text>
+<text x="798" y="230" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">CreateAccountActions</text>
+<text x="798" y="248" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">SelectAcccountToEditActions</text>
+<text x="798" y="266" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">EditAccountActions</text>
+<rect x="782" y="294" width="250" height="116" rx="12" fill="#0D2638" stroke="#214456" stroke-width="1.5"/>
+<text x="798" y="318" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#8FA6B0" text-anchor="start" letter-spacing="0.5" xml:space="preserve">questions/ · asks</text>
+<text x="798" y="342" font-family="Menlo,Consolas,monospace" font-size="12" xml:space="preserve"><tspan fill="#F4F7F5">ElementTextValidator</tspan></text>
+<text x="798" y="362" font-family="Menlo,Consolas,monospace" font-size="12" xml:space="preserve"><tspan fill="#F4F7F5">ElementVisibilityValidator</tspan></text>
+<text x="798" y="382" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" xml:space="preserve"><tspan fill="#FB8176" font-weight="bold">✗</tspan><tspan fill="#F4F7F5"> mismatch → orComplainWith</tspan></text>
+<rect x="1056" y="146" width="176" height="136" rx="12" fill="#0D2638" stroke="#214456" stroke-width="1.5"/>
+<text x="1072" y="170" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#8FA6B0" text-anchor="start" letter-spacing="0.5" xml:space="preserve">userinterfaces/</text>
+<text x="1072" y="194" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">LoginPage</text>
+<text x="1072" y="214" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">HomePage</text>
+<text x="1072" y="234" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">AccountPage</text>
+<text x="1072" y="254" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">SpecificAccountPage</text>
+<rect x="1056" y="294" width="176" height="116" rx="12" fill="#0D2638" stroke="#214456" stroke-width="1.5"/>
+<text x="1072" y="318" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#8FA6B0" text-anchor="start" letter-spacing="0.5" xml:space="preserve">app under test</text>
+<text x="1072" y="342" font-family="Menlo,Consolas,monospace" font-size="12" xml:space="preserve"><tspan fill="#F4F7F5">Salesforce</tspan></text>
+<text x="1072" y="362" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">Lightning UI</text>
+<text x="1072" y="382" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#ABC0C8" text-anchor="start" xml:space="preserve">login.salesforce.com</text>
+<path d="M270 278 L290 278" fill="none" stroke="#55DFBD" stroke-width="2" marker-end="url(#am)"/>
+<path d="M540 278 L560 278" fill="none" stroke="#55DFBD" stroke-width="2" marker-end="url(#am)"/>
+<path d="M760 278 L770 278 L770 214 L780 214" fill="none" stroke="#55DFBD" stroke-width="2" marker-end="url(#am)"/>
+<path d="M760 278 L770 278 L770 352 L780 352" fill="none" stroke="#55DFBD" stroke-width="2" marker-end="url(#am)"/>
+<path d="M1034 214 L1054 214" fill="none" stroke="#55DFBD" stroke-width="2" marker-end="url(#am)"/>
+<path d="M1144 284 L1144 292" fill="none" stroke="#55DFBD" stroke-width="2" marker-end="url(#am)"/>
+<path d="M1034 352 L1054 352" fill="none" stroke="#55DFBD" stroke-width="2" marker-end="url(#am)"/>
+<text x="48" y="448" font-family="Menlo,Consolas,monospace" font-size="12.5" font-weight="normal" xml:space="preserve"><tspan fill="#FFC56E" font-weight="bold">!</tspan><tspan fill="#ABC0C8"> No CI workflow: the suite needs a live Salesforce org and credentials, so it runs locally.</tspan></text>
+<rect x="48.0" y="462" width="224.0" height="44" rx="8" fill="#123448" stroke="#214456" stroke-width="1.2"/>
+<text x="160.0" y="480" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#F4F7F5" text-anchor="middle" xml:space="preserve">export SF_USERNAME</text>
+<text x="160.0" y="497" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#ABC0C8" text-anchor="middle" xml:space="preserve">and SF_PASSWORD</text>
+<path d="M274.0 484.0 L286.0 484.0" fill="none" stroke="#55DFBD" stroke-width="1.6" marker-end="url(#am)"/>
+<rect x="288.0" y="462" width="224.0" height="44" rx="8" fill="#123448" stroke="#214456" stroke-width="1.2"/>
+<text x="400.0" y="480" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#F4F7F5" text-anchor="middle" xml:space="preserve">missing?</text>
+<text x="400.0" y="497" font-family="Menlo,Consolas,monospace" font-size="11" text-anchor="middle" xml:space="preserve"><tspan fill="#FFC56E" font-weight="bold">!</tspan><tspan fill="#ABC0C8"> fails fast</tspan></text>
+<path d="M514.0 484.0 L526.0 484.0" fill="none" stroke="#55DFBD" stroke-width="1.6" marker-end="url(#am)"/>
+<rect x="528.0" y="462" width="224.0" height="44" rx="8" fill="#123448" stroke="#214456" stroke-width="1.2"/>
+<text x="640.0" y="488.5" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#F4F7F5" text-anchor="middle" xml:space="preserve">mvn clean verify</text>
+<path d="M754.0 484.0 L766.0 484.0" fill="none" stroke="#55DFBD" stroke-width="1.6" marker-end="url(#am)"/>
+<rect x="768.0" y="462" width="224.0" height="44" rx="8" fill="#123448" stroke="#214456" stroke-width="1.2"/>
+<text x="880.0" y="480" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#F4F7F5" text-anchor="middle" xml:space="preserve">CucumberWithSerenity</text>
+<text x="880.0" y="497" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#ABC0C8" text-anchor="middle" xml:space="preserve">2 features</text>
+<path d="M994.0 484.0 L1006.0 484.0" fill="none" stroke="#55DFBD" stroke-width="1.6" marker-end="url(#am)"/>
+<rect x="1008.0" y="462" width="224.0" height="44" rx="8" fill="#123448" stroke="#214456" stroke-width="1.2"/>
+<text x="1120.0" y="480" font-family="Menlo,Consolas,monospace" font-size="12" font-weight="normal" fill="#F4F7F5" text-anchor="middle" xml:space="preserve">Serenity report</text>
+<text x="1120.0" y="497" font-family="Menlo,Consolas,monospace" font-size="11" font-weight="normal" fill="#ABC0C8" text-anchor="middle" xml:space="preserve">target/site/serenity/</text>
+<text x="1232" y="524" font-family="Menlo,Consolas,monospace" font-size="13" font-weight="normal" fill="#55DFBD" text-anchor="end" xml:space="preserve">Cristian Guerra · QA · Medellín</text>
+</svg>
