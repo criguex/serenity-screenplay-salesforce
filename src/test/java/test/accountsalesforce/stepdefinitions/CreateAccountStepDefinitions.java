@@ -24,6 +24,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 import test.accountsalesforce.userinterfaces.SpecificAccountPage;
 import test.accountsalesforce.utils.assertiondata.DataAssertions;
+import test.accountsalesforce.utils.data.logindata.LoginData;
 import test.accountsalesforce.utils.drivers.MyChromeDriver;
 
 import static test.accountsalesforce.exceptions.Exceptions.*;
@@ -35,6 +36,7 @@ import static test.accountsalesforce.utils.constants.ConstantsManage.ACTOR;
 public class CreateAccountStepDefinitions {
     @Before
     public void setUp() {
+        LoginData.load();
         OnStage.setTheStage(new OnlineCast());
     }
 

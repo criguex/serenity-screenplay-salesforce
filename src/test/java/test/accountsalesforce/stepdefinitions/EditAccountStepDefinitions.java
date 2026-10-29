@@ -15,6 +15,7 @@ import test.accountsalesforce.task.LoginActions;
 import test.accountsalesforce.task.SelectAcccountToEditActions;
 import test.accountsalesforce.userinterfaces.AccountPage;
 import test.accountsalesforce.utils.assertiondata.DataAssertions;
+import test.accountsalesforce.utils.data.logindata.LoginData;
 import test.accountsalesforce.utils.drivers.MyChromeDriver;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -31,6 +32,7 @@ import static test.accountsalesforce.utils.constants.ConstantsManage.URL;
 public class EditAccountStepDefinitions {
     @Before
     public void setUp() {
+        LoginData.load();
         OnStage.setTheStage(new OnlineCast());
     }
 

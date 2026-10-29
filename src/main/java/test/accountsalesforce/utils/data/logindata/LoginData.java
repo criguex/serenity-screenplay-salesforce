@@ -1,8 +1,13 @@
 package test.accountsalesforce.utils.data.logindata;
 
 public class LoginData {
-    public static final String USERNAME_CORRECT = required("SF_USERNAME");
-    public static final String PASSWORD_CORRECT = required("SF_PASSWORD");
+    public static String USERNAME_CORRECT;
+    public static String PASSWORD_CORRECT;
+
+    public static void load() {
+        USERNAME_CORRECT = required("SF_USERNAME");
+        PASSWORD_CORRECT = required("SF_PASSWORD");
+    }
 
     private static String required(String key) {
         String value = System.getenv(key);
